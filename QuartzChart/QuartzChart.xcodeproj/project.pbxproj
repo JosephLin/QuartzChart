@@ -33,6 +33,8 @@
 		7C769FAC1725CDF40042A4EE /* BarGraphLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9F1725CC800042A4EE /* BarGraphLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C769FAE1725CE350042A4EE /* QuartzChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FAD1725CE0F0042A4EE /* QuartzChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C769FB01725CE810042A4EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769FAF1725CE800042A4EE /* UIKit.framework */; };
+		7C769FD51725E6300042A4EE /* NSArray+Resampling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C769FD61725E6300042A4EE /* NSArray+Resampling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769FD41725E6300042A4EE /* NSArray+Resampling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7C769FA01725CC800042A4EE /* BarGraphLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGraphLayer.m; sourceTree = "<group>"; };
 		7C769FAD1725CE0F0042A4EE /* QuartzChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuartzChart.h; sourceTree = "<group>"; };
 		7C769FAF1725CE800042A4EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Resampling.h"; sourceTree = "<group>"; };
+		7C769FD41725E6300042A4EE /* NSArray+Resampling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Resampling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7C769FA01725CC800042A4EE /* BarGraphLayer.m */,
 				7C769F9B1725CC800042A4EE /* UIBezierPath+Smoothing.h */,
 				7C769F9C1725CC800042A4EE /* UIBezierPath+Smoothing.m */,
+				7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */,
+				7C769FD41725E6300042A4EE /* NSArray+Resampling.m */,
 				7C769F8A1725CB7B0042A4EE /* Supporting Files */,
 			);
 			path = QuartzChart;
@@ -132,6 +138,7 @@
 				7C769FAB1725CDF20042A4EE /* CurveLayer.h in Headers */,
 				7C769FAC1725CDF40042A4EE /* BarGraphLayer.h in Headers */,
 				7C769FAA1725CDEC0042A4EE /* UIBezierPath+Smoothing.h in Headers */,
+				7C769FD51725E6300042A4EE /* NSArray+Resampling.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +225,7 @@
 				7C769FA11725CC800042A4EE /* UIBezierPath+Smoothing.m in Sources */,
 				7C769FA21725CC800042A4EE /* CurveLayer.m in Sources */,
 				7C769FA31725CC800042A4EE /* BarGraphLayer.m in Sources */,
+				7C769FD61725E6300042A4EE /* NSArray+Resampling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +390,7 @@
 				7C769FA71725CD2A0042A4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

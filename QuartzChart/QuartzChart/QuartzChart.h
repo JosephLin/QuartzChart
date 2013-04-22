@@ -8,3 +8,4 @@
 
 #import "CurveLayer.h"
 #import "BarGraphLayer.h"
+#import "NSArray+Resampling.h"

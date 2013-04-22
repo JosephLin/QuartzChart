@@ -25,7 +25,6 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 @property (nonatomic, weak) IBOutlet UILabel *barGraphSamplesLabel;
 @property (nonatomic, weak) IBOutlet UISlider *barGraphSamplesSlider;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *curveTypeSegmentedControl;
-@property (nonatomic) SmoothingAlgorithm smoothingAlgorithm;
 @property (nonatomic) NSUInteger curveSamples;
 @property (nonatomic) NSUInteger barGraphSamples;
 @property (nonatomic, strong) NSArray *values;
@@ -99,7 +98,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 
 - (void)reloadCurveAnimated:(BOOL)animated
 {
-    NSArray *curveValues = [self resampleArray:self.values toSize:self.curveSamples];
+    NSArray *curveValues = [self.values resampleToSize:self.curveSamples method:ResamplingMethodByAverage];
     NSNumber *maxCurveValue = [curveValues valueForKeyPath:@"@max.floatValue"];
     
     NSUInteger optimalGranularity = ceil(CGRectGetWidth(self.curveLayer.frame)/curveValues.count);
@@ -116,7 +115,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 
 - (void)reloadBarGraphAnimated:(BOOL)animated
 {
-    NSArray *barGraphValues = [self resampleArray:self.values toSize:self.barGraphSamples];
+    NSArray *barGraphValues = [self.values resampleToSize:self.barGraphSamples method:ResamplingMethodByAverage];
     NSNumber *maxBarGraphValues = [barGraphValues valueForKeyPath:@"@max.floatValue"];
 
     self.barGraphLayer.values = barGraphValues;
@@ -128,62 +127,8 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     }
 }
 
-- (NSArray *)resampleArray:(NSArray *)array toSize:(NSUInteger)size
-{
-    if (array.count < size)
-        return array;
-    
-    NSMutableArray *resampled = [NSMutableArray arrayWithCapacity:size];
-    
-    
-    float x0 = 0;
-    float x1 = 0;
-    float ratio = (float)size / array.count;
-    
-    for (int i = 0; i < array.count; i++)
-    {
-        x1 = ratio * i;
-        
-        int floor0 = floorf(x0);
-        int floor1 = floorf(x1);
-        
-        if (floor0 == floor1)
-        {
-            while (resampled.count <= floor1) {
-                [resampled addObject:@0];
-            }
-            //            resampled[floor1] = @([resampled[floor1] floatValue] + [array[i] floatValue]);
-            resampled[floor1] = @( [resampled[floor1] floatValue] + [array[i] floatValue] * ratio );
-        }
-        else
-        {
-            while (resampled.count <= floor0) {
-                [resampled addObject:@0];
-            }
-            float value0 = [array[i] floatValue] * (floor1 - x0) / (x1 - x0);
-            //            resampled[floor0] = @([resampled[floor0] floatValue] + value0);
-            resampled[floor0] = @( [resampled[floor0] floatValue] + value0 * ratio );
-            
-            while (resampled.count <= floor1) {
-                [resampled addObject:@0];
-            }
-            float value1 = [array[i] floatValue] * (x1 - floor1) / (x1 - x0);
-            //            resampled[floor1] = @([resampled[floor1] floatValue] + value1);
-            resampled[floor1] = @( [resampled[floor1] floatValue] + value1 * ratio );
-        }
-        
-        x0 = x1;
-    }
-    
-    return resampled;
-}
 
-
-
-
-#pragma mark - IBAction
-#pragma mark - SettingsViewControllerDelegate
-
+#pragma mark - Settings
 
 - (IBAction)sliderValueChanged:(UISlider *)sender
 {
@@ -205,15 +150,15 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     {
         case SegmentedControlIndexBSplines:
         default:
-            self.smoothingAlgorithm = SmoothingAlgorithmBSpline;
+            self.curveLayer.smoothingAlgorithm = SmoothingAlgorithmBSpline;
             break;
             
         case SegmentedControlIndexKBSplines:
-            self.smoothingAlgorithm = SmoothingAlgorithmKBSpline;
+            self.curveLayer.smoothingAlgorithm = SmoothingAlgorithmKBSpline;
             break;
             
         case SegmentedControlIndexQuadEasing:
-            self.smoothingAlgorithm = SmoothingAlgorithmQuadEasingInOut;
+            self.curveLayer.smoothingAlgorithm = SmoothingAlgorithmQuadEasingInOut;
             break;
     }
 }
@@ -228,12 +173,6 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 {
     _barGraphSamples = barGraphSamples;
     self.barGraphSamplesLabel.text = [NSString stringWithFormat:@"Bar graph samples: %d", barGraphSamples];
-}
-
-- (void)setSmoothingAlgorithm:(SmoothingAlgorithm)smoothingAlgorithm
-{
-    _smoothingAlgorithm = smoothingAlgorithm;
-    self.curveLayer.smoothingAlgorithm = smoothingAlgorithm;
 }
 
 
