@@ -7,7 +7,9 @@
 //
 
 #import "MainViewController.h"
-#import <QuartzChart/QuartzChart.h>
+#import "QuartzChart.h"
+
+#define kMaxValue 100
 
 typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     SegmentedControlIndexBSplines = 0,
@@ -45,6 +47,8 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"values" ofType:@"plist"];
     self.values = [NSArray arrayWithContentsOfFile:path];
+
+//    self.values = [self randomArrayOfSize:10];
     
     NSUInteger size = [self.values count];
     self.barGraphSamplesSlider.maximumValue = self.curveSamplesSlider.maximumValue = size;
@@ -53,6 +57,17 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     
     [self reloadCurveAnimated:YES];
     [self reloadBarGraphAnimated:YES];
+}
+
+- (NSArray *)randomArrayOfSize:(NSUInteger)size
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:size];
+    for (int i = 0; i < size; i++)
+    {
+        float value = arc4random_uniform(kMaxValue);
+        [array addObject:@(value)];
+    }
+    return [array copy];
 }
 
 
@@ -71,6 +86,8 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
                                        (id)[UIColor greenColor].CGColor];
         
         _curveLayer.gradientLocations = @[@(0), @(0.3), @(1)];
+        _curveLayer.gradientStartPoint = CGPointMake(0.5, 1.0);
+        _curveLayer.gradientEndPoint = CGPointMake(0.5, 0.0);
         _curveLayer.smoothingAlgorithm = SmoothingAlgorithmBSpline;
 
         [self.graphView.layer addSublayer:_curveLayer];
@@ -99,13 +116,12 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 - (void)reloadCurveAnimated:(BOOL)animated
 {
     NSArray *curveValues = [self.values resampleToSize:self.curveSamples method:ResamplingMethodByAverage];
-    NSNumber *maxCurveValue = [curveValues valueForKeyPath:@"@max.floatValue"];
     
     NSUInteger optimalGranularity = ceil(CGRectGetWidth(self.curveLayer.frame)/curveValues.count);
     self.curveLayer.granularity = optimalGranularity;
     
     self.curveLayer.values = curveValues;
-    self.curveLayer.maxValue = [maxCurveValue floatValue];
+    self.curveLayer.maxValue = kMaxValue;
     
     if (animated)
     {
@@ -116,10 +132,9 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 - (void)reloadBarGraphAnimated:(BOOL)animated
 {
     NSArray *barGraphValues = [self.values resampleToSize:self.barGraphSamples method:ResamplingMethodByAverage];
-    NSNumber *maxBarGraphValues = [barGraphValues valueForKeyPath:@"@max.floatValue"];
 
     self.barGraphLayer.values = barGraphValues;
-    self.barGraphLayer.maxValue = [maxBarGraphValues floatValue];
+    self.barGraphLayer.maxValue = kMaxValue;
     
     if (animated)
     {

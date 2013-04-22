@@ -6,39 +6,23 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		7C769FA41725CD2A0042A4EE /* QuartzChartAggregate */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 7C769FA51725CD2A0042A4EE /* Build configuration list for PBXAggregateTarget "QuartzChartAggregate" */;
-			buildPhases = (
-				7C769FA81725CD4E0042A4EE /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = QuartzChartAggregate;
-			productName = QuartzChartAggregate;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		7C769F8E1725CB7B0042A4EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C769F8C1725CB7B0042A4EE /* InfoPlist.strings */; };
-		7C769F961725CC260042A4EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F951725CC260042A4EE /* CoreGraphics.framework */; };
-		7C769F981725CC340042A4EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F971725CC340042A4EE /* Foundation.framework */; };
-		7C769F9A1725CC3B0042A4EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F991725CC3B0042A4EE /* QuartzCore.framework */; };
-		7C769FA11725CC800042A4EE /* UIBezierPath+Smoothing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769F9C1725CC800042A4EE /* UIBezierPath+Smoothing.m */; };
-		7C769FA21725CC800042A4EE /* CurveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769F9E1725CC800042A4EE /* CurveLayer.m */; };
-		7C769FA31725CC800042A4EE /* BarGraphLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769FA01725CC800042A4EE /* BarGraphLayer.m */; };
-		7C769FAA1725CDEC0042A4EE /* UIBezierPath+Smoothing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9B1725CC800042A4EE /* UIBezierPath+Smoothing.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		7C769FAB1725CDF20042A4EE /* CurveLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9D1725CC800042A4EE /* CurveLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C769FAC1725CDF40042A4EE /* BarGraphLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9F1725CC800042A4EE /* BarGraphLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C769FAE1725CE350042A4EE /* QuartzChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FAD1725CE0F0042A4EE /* QuartzChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C769FB01725CE810042A4EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769FAF1725CE800042A4EE /* UIKit.framework */; };
-		7C769FD51725E6300042A4EE /* NSArray+Resampling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C769FD61725E6300042A4EE /* NSArray+Resampling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769FD41725E6300042A4EE /* NSArray+Resampling.m */; };
+		7C769FDC1725F4CF0042A4EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F971725CC340042A4EE /* Foundation.framework */; };
+		7C769FE71725F4E20042A4EE /* CurveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769F9E1725CC800042A4EE /* CurveLayer.m */; };
+		7C769FE81725F4E20042A4EE /* BarGraphLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769FA01725CC800042A4EE /* BarGraphLayer.m */; };
+		7C769FE91725F4E20042A4EE /* UIBezierPath+Smoothing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769F9C1725CC800042A4EE /* UIBezierPath+Smoothing.m */; };
+		7C769FEA1725F4E20042A4EE /* NSArray+Resampling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769FD41725E6300042A4EE /* NSArray+Resampling.m */; };
+		7C769FEB1725F4ED0042A4EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769FAF1725CE800042A4EE /* UIKit.framework */; };
+		7C769FEC1725F4EF0042A4EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F991725CC3B0042A4EE /* QuartzCore.framework */; };
+		7C769FED1725F4F10042A4EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769F951725CC260042A4EE /* CoreGraphics.framework */; };
+		7C769FEF1725F50E0042A4EE /* QuartzChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FAD1725CE0F0042A4EE /* QuartzChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C769FF01725F5100042A4EE /* CurveLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9D1725CC800042A4EE /* CurveLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C769FF11725F5120042A4EE /* BarGraphLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9F1725CC800042A4EE /* BarGraphLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C769FF21725F5130042A4EE /* NSArray+Resampling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C769FF31725F5150042A4EE /* UIBezierPath+Smoothing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C769F9B1725CC800042A4EE /* UIBezierPath+Smoothing.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C769F841725CB7B0042A4EE /* QuartzChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuartzChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C769F8B1725CB7B0042A4EE /* QuartzChart-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuartzChart-Info.plist"; sourceTree = "<group>"; };
 		7C769F8D1725CB7B0042A4EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C769F8F1725CB7B0042A4EE /* QuartzChart-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuartzChart-Prefix.pch"; sourceTree = "<group>"; };
@@ -55,17 +39,18 @@
 		7C769FAF1725CE800042A4EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7C769FD31725E62F0042A4EE /* NSArray+Resampling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Resampling.h"; sourceTree = "<group>"; };
 		7C769FD41725E6300042A4EE /* NSArray+Resampling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Resampling.m"; sourceTree = "<group>"; };
+		7C769FDB1725F4CF0042A4EE /* libQuartzChart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuartzChart.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7C769F811725CB7B0042A4EE /* Frameworks */ = {
+		7C769FD81725F4CF0042A4EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C769FB01725CE810042A4EE /* UIKit.framework in Frameworks */,
-				7C769F9A1725CC3B0042A4EE /* QuartzCore.framework in Frameworks */,
-				7C769F981725CC340042A4EE /* Foundation.framework in Frameworks */,
-				7C769F961725CC260042A4EE /* CoreGraphics.framework in Frameworks */,
+				7C769FDC1725F4CF0042A4EE /* Foundation.framework in Frameworks */,
+				7C769FEB1725F4ED0042A4EE /* UIKit.framework in Frameworks */,
+				7C769FEC1725F4EF0042A4EE /* QuartzCore.framework in Frameworks */,
+				7C769FED1725F4F10042A4EE /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +69,7 @@
 		7C769F851725CB7B0042A4EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C769F841725CB7B0042A4EE /* QuartzChart.framework */,
+				7C769FDB1725F4CF0042A4EE /* libQuartzChart.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,29 +115,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7C769FA91725CDDE0042A4EE /* Headers */ = {
+		7C769FEE1725F4FF0042A4EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C769FAE1725CE350042A4EE /* QuartzChart.h in Headers */,
-				7C769FAB1725CDF20042A4EE /* CurveLayer.h in Headers */,
-				7C769FAC1725CDF40042A4EE /* BarGraphLayer.h in Headers */,
-				7C769FAA1725CDEC0042A4EE /* UIBezierPath+Smoothing.h in Headers */,
-				7C769FD51725E6300042A4EE /* NSArray+Resampling.h in Headers */,
+				7C769FEF1725F50E0042A4EE /* QuartzChart.h in Headers */,
+				7C769FF01725F5100042A4EE /* CurveLayer.h in Headers */,
+				7C769FF11725F5120042A4EE /* BarGraphLayer.h in Headers */,
+				7C769FF21725F5130042A4EE /* NSArray+Resampling.h in Headers */,
+				7C769FF31725F5150042A4EE /* UIBezierPath+Smoothing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7C769F831725CB7B0042A4EE /* QuartzChart */ = {
+		7C769FDA1725F4CF0042A4EE /* QuartzChart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C769F921725CB7B0042A4EE /* Build configuration list for PBXNativeTarget "QuartzChart" */;
+			buildConfigurationList = 7C769FE41725F4CF0042A4EE /* Build configuration list for PBXNativeTarget "QuartzChart" */;
 			buildPhases = (
-				7C769F801725CB7B0042A4EE /* Sources */,
-				7C769F811725CB7B0042A4EE /* Frameworks */,
-				7C769F821725CB7B0042A4EE /* Resources */,
-				7C769FA91725CDDE0042A4EE /* Headers */,
+				7C769FD71725F4CF0042A4EE /* Sources */,
+				7C769FD81725F4CF0042A4EE /* Frameworks */,
+				7C769FEE1725F4FF0042A4EE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -160,8 +144,8 @@
 			);
 			name = QuartzChart;
 			productName = QuartzChart;
-			productReference = 7C769F841725CB7B0042A4EE /* QuartzChart.framework */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 7C769FDB1725F4CF0042A4EE /* libQuartzChart.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -184,48 +168,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C769F831725CB7B0042A4EE /* QuartzChart */,
-				7C769FA41725CD2A0042A4EE /* QuartzChartAggregate */,
+				7C769FDA1725F4CF0042A4EE /* QuartzChart */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		7C769F821725CB7B0042A4EE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7C769F8E1725CB7B0042A4EE /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7C769FA81725CD4E0042A4EE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=QuartzChart\nFMK_VERSION=A\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Removes the binary and header from the resources folder.\nrm -r \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/Headers\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/${FMK_NAME}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		7C769F801725CB7B0042A4EE /* Sources */ = {
+		7C769FD71725F4CF0042A4EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C769FA11725CC800042A4EE /* UIBezierPath+Smoothing.m in Sources */,
-				7C769FA21725CC800042A4EE /* CurveLayer.m in Sources */,
-				7C769FA31725CC800042A4EE /* BarGraphLayer.m in Sources */,
-				7C769FD61725E6300042A4EE /* NSArray+Resampling.m in Sources */,
+				7C769FE71725F4E20042A4EE /* CurveLayer.m in Sources */,
+				7C769FE81725F4E20042A4EE /* BarGraphLayer.m in Sources */,
+				7C769FE91725F4E20042A4EE /* UIBezierPath+Smoothing.m in Sources */,
+				7C769FEA1725F4E20042A4EE /* NSArray+Resampling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,63 +258,34 @@
 			};
 			name = Release;
 		};
-		7C769F931725CB7B0042A4EE /* Debug */ = {
+		7C769FE51725F4CF0042A4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/QuartzChart.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuartzChart/QuartzChart-Prefix.pch";
-				INFOPLIST_FILE = "QuartzChart/QuartzChart-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				WRAPPER_EXTENSION = framework;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		7C769F941725CB7B0042A4EE /* Release */ = {
+		7C769FE61725F4CF0042A4EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/QuartzChart.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuartzChart/QuartzChart-Prefix.pch";
-				INFOPLIST_FILE = "QuartzChart/QuartzChart-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = mh_object;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		7C769FA61725CD2A0042A4EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		7C769FA71725CD2A0042A4EE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -374,20 +301,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C769F921725CB7B0042A4EE /* Build configuration list for PBXNativeTarget "QuartzChart" */ = {
+		7C769FE41725F4CF0042A4EE /* Build configuration list for PBXNativeTarget "QuartzChart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C769F931725CB7B0042A4EE /* Debug */,
-				7C769F941725CB7B0042A4EE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C769FA51725CD2A0042A4EE /* Build configuration list for PBXAggregateTarget "QuartzChartAggregate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7C769FA61725CD2A0042A4EE /* Debug */,
-				7C769FA71725CD2A0042A4EE /* Release */,
+				7C769FE51725F4CF0042A4EE /* Debug */,
+				7C769FE61725F4CF0042A4EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

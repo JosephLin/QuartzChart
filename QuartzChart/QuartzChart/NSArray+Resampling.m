@@ -13,7 +13,7 @@
 
 - (NSArray *)resampleToSize:(NSUInteger)size method:(ResamplingMethod)method
 {
-    if (self.count < size)
+    if ([self count] <= size)
         return self;
     
     if (method < ResamplingMethodByAverage || method > ResamplingMethodByAddition) {
@@ -41,7 +41,7 @@
                 [resampled addObject:@0];
             }
             
-            resampled[floor1] = @( [resampled[floor1] floatValue] + [self[i] floatValue] * ratioOrOne );
+            resampled[floor1] = @( [resampled[floor1] floatValue] + [self[i] floatValue] );
         }
         else
         {
@@ -50,7 +50,7 @@
             }
             float value0 = [self[i] floatValue] * (floor1 - x0) / (x1 - x0);
             
-            resampled[floor0] = @( [resampled[floor0] floatValue] + value0 * ratioOrOne );
+            resampled[floor0] = @( [resampled[floor0] floatValue] + value0 );
             
             
             while (resampled.count <= floor1) {
@@ -58,10 +58,18 @@
             }
             float value1 = [self[i] floatValue] * (x1 - floor1) / (x1 - x0);
 
-            resampled[floor1] = @( [resampled[floor1] floatValue] + value1 * ratioOrOne );
+            resampled[floor1] = @( [resampled[floor1] floatValue] + value1 );
         }
         
         x0 = x1;
+    }
+    
+    if (method == ResamplingMethodByAverage)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            resampled[i] = @([resampled[i] floatValue] * ratio);
+        }
     }
     
     return resampled;

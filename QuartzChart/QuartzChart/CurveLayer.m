@@ -34,8 +34,7 @@
         self.gradientStartPoint = CGPointMake(0.0, 0.5);
         self.gradientEndPoint = CGPointMake(1.0, 0.5);
         self.gradientColors = @[(id)[UIColor redColor].CGColor,
-                                (id)[UIColor yellowColor].CGColor,
-                                (id)[UIColor greenColor].CGColor];
+                                (id)[UIColor yellowColor].CGColor];
         
         self.maxValue = 100;
         self.padding = CGSizeZero;

@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gs-WV-KLy" userLabel="Graph View">
-                                <color key="backgroundColor" red="0.10059167579104858" green="0.41446936957816988" blue="0.62818444293478259" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9N0-68-fX8" userLabel="Settings View">
                                 <subviews>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.062745101750000004" green="0.32941177490000001" blue="0.46666669849999998" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YDz-M3-o36" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="1pS-ek-jAe"/>
                                     <constraint firstItem="4qt-0R-qfl" firstAttribute="leading" secondItem="9N0-68-fX8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CQA-0D-GX4"/>
@@ -66,15 +66,25 @@
                                     <constraint firstItem="kLa-O1-8V4" firstAttribute="top" secondItem="4qt-0R-qfl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xRs-63-Lrj"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="DH9-SC-7ku">
+                                <items>
+                                    <navigationItem title="Demo" id="haK-1y-yVi">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="YvD-9F-IqQ"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9N0-68-fX8" firstAttribute="top" secondItem="6gs-WV-KLy" secondAttribute="bottom" type="user" id="2af-2r-6Dv"/>
                             <constraint firstItem="6gs-WV-KLy" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="85X-oU-IQD"/>
+                            <constraint firstItem="DH9-SC-7ku" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="D54-8Y-17i"/>
                             <constraint firstItem="9N0-68-fX8" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Yrk-KZ-SbK"/>
                             <constraint firstItem="6gs-WV-KLy" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="dZB-kR-UBu"/>
-                            <constraint firstItem="6gs-WV-KLy" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="rl0-8f-F3o"/>
+                            <constraint firstItem="6gs-WV-KLy" firstAttribute="top" secondItem="DH9-SC-7ku" secondAttribute="bottom" type="default" id="fNb-hu-vfx"/>
+                            <constraint firstItem="DH9-SC-7ku" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="gsq-bf-IHd"/>
                             <constraint firstItem="9N0-68-fX8" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="u41-HX-puX"/>
+                            <constraint firstItem="DH9-SC-7ku" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="ug0-DA-Rr8"/>
                             <constraint firstItem="9N0-68-fX8" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="v7j-pM-Bpa"/>
                         </constraints>
                     </view>
