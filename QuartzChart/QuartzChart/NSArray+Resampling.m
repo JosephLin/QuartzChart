@@ -11,9 +11,11 @@
 
 @implementation NSArray (Resampling)
 
-- (NSArray *)resampleToSize:(NSUInteger)size method:(ResamplingMethod)method
+- (NSArray *)resampleToSize:(NSUInteger)newSize method:(ResamplingMethod)method
 {
-    if ([self count] <= size)
+    NSUInteger oldSize = [self count];
+    
+    if (oldSize == newSize)
         return self;
     
     if (method < ResamplingMethodByAverage || method > ResamplingMethodByAddition) {
@@ -22,55 +24,28 @@
     }
     
     
-    float x0 = 0;
-    float x1 = 0;
-    float ratio = (float)size / self.count;
-    float ratioOrOne = (method == ResamplingMethodByAverage) ? ratio : 1;
-    NSMutableArray *resampled = [NSMutableArray arrayWithCapacity:size];
+    NSMutableArray *resampled = [NSMutableArray arrayWithCapacity:newSize];
     
-    for (int i = 0; i < self.count; i++)
+    
+    for (int i = 0; i < newSize; i++)
     {
-        x1 = ratio * i;
+        float y = 0;
         
-        int floor0 = floorf(x0);
-        int floor1 = floorf(x1);
-        
-        if (floor0 == floor1)
+        for (int j = 0; j < oldSize; j++)
         {
-            while (resampled.count <= floor1) {
-                [resampled addObject:@0];
-            }
+            float x = ((float)i * (float)oldSize/newSize) + (float)j / newSize;
             
-            resampled[floor1] = @( [resampled[floor1] floatValue] + [self[i] floatValue] );
-        }
-        else
-        {
-            while (resampled.count <= floor0) {
-                [resampled addObject:@0];
-            }
-            float value0 = [self[i] floatValue] * (floor1 - x0) / (x1 - x0);
-            
-            resampled[floor0] = @( [resampled[floor0] floatValue] + value0 );
-            
-            
-            while (resampled.count <= floor1) {
-                [resampled addObject:@0];
-            }
-            float value1 = [self[i] floatValue] * (x1 - floor1) / (x1 - x0);
-
-            resampled[floor1] = @( [resampled[floor1] floatValue] + value1 );
+            y += ([self[(int)x] floatValue] / newSize);
         }
         
-        x0 = x1;
+        if (method == ResamplingMethodByAverage)
+        {
+            y *= (float)newSize / oldSize;
+        }
+        
+        [resampled addObject:@(y)];
     }
     
-    if (method == ResamplingMethodByAverage)
-    {
-        for (int i = 0; i < size; i++)
-        {
-            resampled[i] = @([resampled[i] floatValue] * ratio);
-        }
-    }
     
     return resampled;
 }

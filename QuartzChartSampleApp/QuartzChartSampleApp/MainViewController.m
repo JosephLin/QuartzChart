@@ -45,13 +45,13 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 {
     [super viewDidAppear:animated];
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"values" ofType:@"plist"];
-    self.values = [NSArray arrayWithContentsOfFile:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"values" ofType:@"plist"];
+//    self.values = [NSArray arrayWithContentsOfFile:path];
 
-//    self.values = [self randomArrayOfSize:10];
+    self.values = [self randomArrayOfSize:50];
     
     NSUInteger size = [self.values count];
-    self.barGraphSamplesSlider.maximumValue = self.curveSamplesSlider.maximumValue = size;
+    self.barGraphSamplesSlider.maximumValue = self.curveSamplesSlider.maximumValue = size * 2;
     self.curveSamplesSlider.value = self.curveSamples = size;
     self.barGraphSamplesSlider.value = self.barGraphSamples = size;
     
