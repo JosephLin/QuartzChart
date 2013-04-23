@@ -10,6 +10,7 @@
 #import "QuartzChart.h"
 
 #define kMaxValue 100
+#define kSampleCount 40
 
 typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     SegmentedControlIndexBSplines = 0,
@@ -35,25 +36,23 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 
 @implementation MainViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
+    self.barGraphSamplesSlider.maximumValue = self.curveSamplesSlider.maximumValue = kSampleCount * 2;
+    self.curveSamplesSlider.value = self.curveSamples = kSampleCount;
+    self.barGraphSamplesSlider.value = self.barGraphSamples = kSampleCount;
+
+    [self reloadButtonTapped:nil];
+}
+
+- (IBAction)reloadButtonTapped:(id)sender
+{
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"values" ofType:@"plist"];
 //    self.values = [NSArray arrayWithContentsOfFile:path];
 
-    self.values = [self randomArrayOfSize:50];
-    
-    NSUInteger size = [self.values count];
-    self.barGraphSamplesSlider.maximumValue = self.curveSamplesSlider.maximumValue = size * 2;
-    self.curveSamplesSlider.value = self.curveSamples = size;
-    self.barGraphSamplesSlider.value = self.barGraphSamples = size;
+    self.values = [self randomArrayOfSize:kSampleCount];
     
     [self reloadCurveAnimated:YES];
     [self reloadBarGraphAnimated:YES];
@@ -181,13 +180,25 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 - (void)setCurveSamples:(NSUInteger)curveSamples
 {
     _curveSamples = curveSamples;
-    self.curveSamplesLabel.text = [NSString stringWithFormat:@"Curve samples: %d", curveSamples];
+    NSString *text = [NSString stringWithFormat:@"Curve samples: %d", curveSamples];
+    if (curveSamples > kSampleCount)
+        text = [text stringByAppendingString:@" (Oversampling)"];
+    else if (curveSamples < kSampleCount)
+        text = [text stringByAppendingString:@" (Downsampling)"];
+    
+    self.curveSamplesLabel.text = text;
 }
 
 - (void)setBarGraphSamples:(NSUInteger)barGraphSamples
 {
     _barGraphSamples = barGraphSamples;
-    self.barGraphSamplesLabel.text = [NSString stringWithFormat:@"Bar graph samples: %d", barGraphSamples];
+    NSString *text = [NSString stringWithFormat:@"Curve samples: %d", barGraphSamples];
+    if (barGraphSamples > kSampleCount)
+        text = [text stringByAppendingString:@" (Oversampling)"];
+    else if (barGraphSamples < kSampleCount)
+        text = [text stringByAppendingString:@" (Downsampling)"];
+    
+    self.barGraphSamplesLabel.text = text;
 }
 
 

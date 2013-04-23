@@ -69,7 +69,11 @@
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="DH9-SC-7ku">
                                 <items>
                                     <navigationItem title="Demo" id="haK-1y-yVi">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="YvD-9F-IqQ"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="YvD-9F-IqQ">
+                                            <connections>
+                                                <action selector="reloadButtonTapped:" destination="2" id="NrL-D1-6hL"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -106,6 +110,7 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="reloadButtonTapped:"/>
                 <relationship kind="action" name="segmentValueChanged:" candidateClass="UISegmentedControl"/>
                 <relationship kind="action" name="sliderValueChanged:" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="barGraphSamplesLabel" candidateClass="UILabel"/>
