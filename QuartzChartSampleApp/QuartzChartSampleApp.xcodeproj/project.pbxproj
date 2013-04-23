@@ -18,7 +18,7 @@
 		7C769F751725CB4E0042A4EE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C769F741725CB4E0042A4EE /* MainViewController.m */; };
 		7C769FD01725D6890042A4EE /* values.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C769FCF1725D6890042A4EE /* values.plist */; };
 		7C769FD21725DDD50042A4EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769FD11725DDD50042A4EE /* QuartzCore.framework */; };
-		7C769FFD1725F6370042A4EE /* libQuartzChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C769FF41725F6370042A4EE /* libQuartzChart.a */; };
+		7CCD059917260FCF0066D637 /* libQuartzChart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCD059017260FCF0066D637 /* libQuartzChart.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,12 @@
 		7C769F741725CB4E0042A4EE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7C769FCF1725D6890042A4EE /* values.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = values.plist; sourceTree = "<group>"; };
 		7C769FD11725DDD50042A4EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7C769FF41725F6370042A4EE /* libQuartzChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libQuartzChart.a; path = "../../../../../Library/Developer/Xcode/DerivedData/QuartzChart-gqyjfztmlqsqjkbmjedngiumezfe/Build/Products/Debug-iphonesimulator/libQuartzChart.a"; sourceTree = "<group>"; };
-		7C769FF81725F6370042A4EE /* BarGraphLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraphLayer.h; sourceTree = "<group>"; };
-		7C769FF91725F6370042A4EE /* CurveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveLayer.h; sourceTree = "<group>"; };
-		7C769FFA1725F6370042A4EE /* NSArray+Resampling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Resampling.h"; sourceTree = "<group>"; };
-		7C769FFB1725F6370042A4EE /* QuartzChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzChart.h; sourceTree = "<group>"; };
-		7C769FFC1725F6370042A4EE /* UIBezierPath+Smoothing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Smoothing.h"; sourceTree = "<group>"; };
+		7CCD059017260FCF0066D637 /* libQuartzChart.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libQuartzChart.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CCD059417260FCF0066D637 /* BarGraphLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraphLayer.h; sourceTree = "<group>"; };
+		7CCD059517260FCF0066D637 /* CurveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveLayer.h; sourceTree = "<group>"; };
+		7CCD059617260FCF0066D637 /* NSArray+Resampling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Resampling.h"; sourceTree = "<group>"; };
+		7CCD059717260FCF0066D637 /* QuartzChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzChart.h; sourceTree = "<group>"; };
+		7CCD059817260FCF0066D637 /* UIBezierPath+Smoothing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Smoothing.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 				7C769F561725CB4E0042A4EE /* UIKit.framework in Frameworks */,
 				7C769F581725CB4E0042A4EE /* Foundation.framework in Frameworks */,
 				7C769F5A1725CB4E0042A4EE /* CoreGraphics.framework in Frameworks */,
-				7C769FFD1725F6370042A4EE /* libQuartzChart.a in Frameworks */,
+				7CCD059917260FCF0066D637 /* libQuartzChart.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,43 +125,42 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		7C769FF51725F6370042A4EE /* usr */ = {
+		7C769FFE1725F63A0042A4EE /* QuartzChart */ = {
 			isa = PBXGroup;
 			children = (
-				7C769FF61725F6370042A4EE /* local */,
+				7CCD059017260FCF0066D637 /* libQuartzChart.a */,
+				7CCD059117260FCF0066D637 /* usr */,
 			);
-			name = usr;
-			path = "../../../../../Library/Developer/Xcode/DerivedData/QuartzChart-gqyjfztmlqsqjkbmjedngiumezfe/Build/Products/Debug-iphonesimulator/usr";
+			name = QuartzChart;
+			path = QuartzChartSampleApp;
 			sourceTree = "<group>";
 		};
-		7C769FF61725F6370042A4EE /* local */ = {
+		7CCD059117260FCF0066D637 /* usr */ = {
 			isa = PBXGroup;
 			children = (
-				7C769FF71725F6370042A4EE /* include */,
+				7CCD059217260FCF0066D637 /* local */,
+			);
+			path = usr;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CCD059217260FCF0066D637 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				7CCD059317260FCF0066D637 /* include */,
 			);
 			path = local;
 			sourceTree = "<group>";
 		};
-		7C769FF71725F6370042A4EE /* include */ = {
+		7CCD059317260FCF0066D637 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				7C769FF81725F6370042A4EE /* BarGraphLayer.h */,
-				7C769FF91725F6370042A4EE /* CurveLayer.h */,
-				7C769FFA1725F6370042A4EE /* NSArray+Resampling.h */,
-				7C769FFB1725F6370042A4EE /* QuartzChart.h */,
-				7C769FFC1725F6370042A4EE /* UIBezierPath+Smoothing.h */,
+				7CCD059417260FCF0066D637 /* BarGraphLayer.h */,
+				7CCD059517260FCF0066D637 /* CurveLayer.h */,
+				7CCD059617260FCF0066D637 /* NSArray+Resampling.h */,
+				7CCD059717260FCF0066D637 /* QuartzChart.h */,
+				7CCD059817260FCF0066D637 /* UIBezierPath+Smoothing.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		7C769FFE1725F63A0042A4EE /* QuartzChart */ = {
-			isa = PBXGroup;
-			children = (
-				7C769FF41725F6370042A4EE /* libQuartzChart.a */,
-				7C769FF51725F6370042A4EE /* usr */,
-			);
-			name = QuartzChart;
-			path = QuartzChartSampleApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,17 +317,12 @@
 		7C769F791725CB4E0042A4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../QuartzChart/Products\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuartzChartSampleApp/QuartzChartSampleApp-Prefix.pch";
 				INFOPLIST_FILE = "QuartzChartSampleApp/QuartzChartSampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/QuartzChart-gqyjfztmlqsqjkbmjedngiumezfe/Build/Products/Debug-iphonesimulator\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -337,17 +331,12 @@
 		7C769F7A1725CB4E0042A4EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../QuartzChart/Products\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuartzChartSampleApp/QuartzChartSampleApp-Prefix.pch";
 				INFOPLIST_FILE = "QuartzChartSampleApp/QuartzChartSampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/QuartzChart-gqyjfztmlqsqjkbmjedngiumezfe/Build/Products/Debug-iphonesimulator\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
