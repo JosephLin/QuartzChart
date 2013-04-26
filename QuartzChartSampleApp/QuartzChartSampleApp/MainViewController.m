@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
 @property (nonatomic, weak) IBOutlet UISegmentedControl *curveTypeSegmentedControl;
 @property (nonatomic) NSUInteger curveSamples;
 @property (nonatomic) NSUInteger barGraphSamples;
-@property (nonatomic, strong) NSArray *values;
+@property (nonatomic, strong) NSMutableArray *values;
 @end
 
 
@@ -45,7 +45,25 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     self.barGraphSamplesSlider.value = self.barGraphSamples = kSampleCount;
 
     [self reloadButtonTapped:nil];
+    
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+//    link.frameInterval = 10;
+    [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
 }
+
+- (void)update:(CADisplayLink *)sender
+{
+    float value = arc4random_uniform(kMaxValue);
+
+    [self.values removeObjectAtIndex:0];
+    [self.values addObject:@(value)];
+    
+    [self reloadCurveAnimated:NO];
+    [self reloadBarGraphAnimated:NO];
+}
+
+
 
 - (IBAction)reloadButtonTapped:(id)sender
 {
@@ -58,7 +76,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
     [self reloadBarGraphAnimated:YES];
 }
 
-- (NSArray *)randomArrayOfSize:(NSUInteger)size
+- (NSMutableArray *)randomArrayOfSize:(NSUInteger)size
 {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:size];
     for (int i = 0; i < size; i++)
@@ -66,7 +84,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlIndex){
         float value = arc4random_uniform(kMaxValue);
         [array addObject:@(value)];
     }
-    return [array copy];
+    return array;
 }
 
 
